@@ -15,7 +15,7 @@ function changeVisibility(id){
     let header = document.getElementById(id);
     if(inner.style.display=="block"){
         inner.style.display="none";
-        header.style.right=15+"px";
+        header.style.right=18+"px";
     }else{
         inner.style.display="block";
         header.style.right=49+"px";
