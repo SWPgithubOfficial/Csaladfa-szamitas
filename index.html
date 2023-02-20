@@ -20,11 +20,11 @@
         <div class="toolName" id="eszkozok" onclick="changeVisibility('eszkozok')">E$zközök</div>
         <div class="backg" id="eszkozokInner">
             <div class="icons">
-                <img src="media/male.png" onclick="spawnNode(1)" class="icon" title="Férfi hozzáadása"><br>
-                <img src="media/female.png" onclick="spawnNode(0)" class="icon" title="Nő hozzáadása"><br>
-                <img src="media/unknown.png" onclick="spawnNode(2)" class="icon" title="Ismeretlen hozzáadása"><br><br>
-                <img id="movePic" src="media/moveSelected.png" onclick="selectMoveTool()" class="icon" title="Mozgatás"><br>
-                <img id="deletePic" src="media/delete2.png" onclick="selectDelTool()" class="icon" title="Törlés"><br>
+                <img src="male.png" onclick="spawnNode(1)" class="icon" title="Férfi hozzáadása"><br>
+                <img src="female.png" onclick="spawnNode(0)" class="icon" title="Nő hozzáadása"><br>
+                <img src="unknown.png" onclick="spawnNode(2)" class="icon" title="Ismeretlen hozzáadása"><br><br>
+                <img id="movePic" src="moveSelected.png" onclick="selectMoveTool()" class="icon" title="Mozgatás"><br>
+                <img id="deletePic" src="delete2.png" onclick="selectDelTool()" class="icon" title="Törlés"><br>
             </div>
         </div>
 
@@ -38,8 +38,8 @@
                     <label for="t_2"> tulajdonság 2</label><br>
                 </form>
                 <p style="text-align: center;">
-                    <img class="icon" src="media/edit.png" onclick="openAttributes()" title="Tulajdonságok szerkesztése"><br>
-                    <img class="icon" src="media/calc.png" onclick="calculate()" title="Tulajdonságok kiszámítása">
+                    <img class="icon" src="edit.png" onclick="openAttributes()" title="Tulajdonságok szerkesztése"><br>
+                    <img class="icon" src="calc.png" onclick="calculate()" title="Tulajdonságok kiszámítása">
                 </p>
                 
             </div>
@@ -50,13 +50,13 @@
             <div class="icons">
                 <div class="image-upload">
                     <label for="fInput">
-                      <img src="media/upload.png" class="icon" title="Fájl kiválasztása"/>
+                      <img src="upload.png" class="icon" title="Fájl kiválasztása"/>
                     </label>
                     <input id="fInput" type="file" style="display: none;" accept=".txt" onchange="loadFile()"/>
                 </div>
-                <img class="icon" src="media/save.png" onclick="saveFile(setupSave(),'mentes')" title="Mentés"><br>
-                <img class="icon" src="media/help.png" onclick="" title="Súgó">
-                <img class="icon" src="media/info.png" onclick="" title="Rólunk">
+                <img class="icon" src="save.png" onclick="saveFile(setupSave(),'mentes')" title="Mentés"><br>
+                <img class="icon" src="help.png" onclick="" title="Súgó">
+                <img class="icon" src="info.png" onclick="" title="Rólunk">
             </div>
         </div>
     </div>
@@ -64,7 +64,7 @@
     <div id="overlay">
         <h1>Tulajdonságok</h1>
         <div id="content">
-            <div id="close" onclick="closeAttributes()"><img style="height: 30px; width: 30px;" class="icon" src="media/close.png" onclick="" title="Bezárás"></div>
+            <div id="close" onclick="closeAttributes()"><img style="height: 30px; width: 30px;" class="icon" src="close.png" onclick="" title="Bezárás"></div>
             <div id="attrList">
                 <div class="attr">
                     <input type="text" placeholder="tulajdonság neve" value="tulajdonság" class="attrName">
