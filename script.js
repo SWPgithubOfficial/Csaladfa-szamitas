@@ -242,13 +242,12 @@ function calculateAttr(attrId){
             let nodeChildren = document.getElementById(nodeIds[i]).childNodes;
             for(let j=0; j<nodeChildren.length; j+=1){
                 if(nodeChildren[j].id==attrId){
-                    if(nodeChildren[j].childNodes[1].value == "uk"){
                         let resNodes = nodeChildren[j].childNodes;
                         for(let k=0; k<resNodes.length; k+=1){
                             if(resNodes[k].className=="resultText"){
                                 resNodes[k].remove();
                             }
-                        }
+                    if(nodeChildren[j].childNodes[1].value == "uk"){
                         let resStr = "";
                         let usedRes = {};
                         for(let k=0; k<resPercent[idRef[nodeIds[i]]].length; k+=1){
