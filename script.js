@@ -242,27 +242,29 @@ function calculateAttr(attrId){
             let nodeChildren = document.getElementById(nodeIds[i]).childNodes;
             for(let j=0; j<nodeChildren.length; j+=1){
                 if(nodeChildren[j].id==attrId){
-                    let resNodes = nodeChildren[j].childNodes;
-                    for(let k=0; k<resNodes.length; k+=1){
-                        if(resNodes[k].className=="resultText"){
-                            resNodes[k].remove();
+                    if(nodeChildren[j].childNodes[1].value == "uk"){
+                        let resNodes = nodeChildren[j].childNodes;
+                        for(let k=0; k<resNodes.length; k+=1){
+                            if(resNodes[k].className=="resultText"){
+                                resNodes[k].remove();
+                            }
                         }
-                    }
-                    let resStr = "";
-                    let usedRes = {};
-                    for(let k=0; k<resPercent[idRef[nodeIds[i]]].length; k+=1){
-                        if(!(selectedAttrData[k][1] in usedRes)){
-                            usedRes[selectedAttrData[k][1]] = 1;
-                            resStr += selectedAttrData[k][1];
-                            resStr += ": ";
-                            resStr += String(resPercent[idRef[nodeIds[i]]][k]);
-                            resStr += "%\n";
+                        let resStr = "";
+                        let usedRes = {};
+                        for(let k=0; k<resPercent[idRef[nodeIds[i]]].length; k+=1){
+                            if(!(selectedAttrData[k][1] in usedRes)){
+                                usedRes[selectedAttrData[k][1]] = 1;
+                                resStr += selectedAttrData[k][1];
+                                resStr += ": ";
+                                resStr += String(resPercent[idRef[nodeIds[i]]][k]);
+                                resStr += "%\n";
+                            }
                         }
+                        let resultText = document.createElement("p");
+                        resultText.className = "resultText";
+                        resultText.innerText = resStr;
+                        nodeChildren[j].appendChild(resultText);
                     }
-                    let resultText = document.createElement("p");
-                    resultText.className = "resultText";
-                    resultText.innerText = resStr;
-                    nodeChildren[j].appendChild(resultText);
                 }
             }
         }
