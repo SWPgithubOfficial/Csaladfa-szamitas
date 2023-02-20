@@ -21,9 +21,9 @@ body {
   font-size: 18pt;
   font-weight: bold;
   position: absolute;
-  transform-origin: 50% 50%;
-  transform: translateX(50%) translateY(-50%) rotate(-90deg);
-  right: 30px;
+  transform-origin: 100%;
+  transform: rotate(-90deg);
+  right: 15px;
   z-index: 14;
 }
 
