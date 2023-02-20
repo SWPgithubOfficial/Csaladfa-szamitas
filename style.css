@@ -5,23 +5,21 @@ body {
 
 
 #tools {
-  position: fixed;
-  left:100%;
-  z-index: 20;
+  width: 40px;
   margin-left: auto;
   margin-right: 0px;
   text-align: left;
   user-select: none;
-  height: 100vh;
+  height: auto;
 }
 .toolName{
   cursor: pointer;
   font-size: 18pt;
   font-weight: bold;
   position: absolute;
-  transform-origin: 100%;
-  transform: rotate(-90deg);
-  right: 15px;
+  transform-origin: 50% 50%;
+  transform: translateX(50%) translateY(-50%) rotate(-90deg);
+  right: 18px;
   z-index: 14;
 }
 
@@ -51,29 +49,26 @@ body {
 }
 
 #eszkozok {
-  top:8%;
+  top:17%;
 }
 #tulajdonsagok {
-  top:37%;
+  top:50%;
 }
 #egyeb {
-  top:77%;
+  top:83%;
 }
 #eszkozokInner {
   top:0%;
   width:40px;
-  right:0px;
 }
 #tulajdonsagokInner {
   top:33.333%;
   width:200px;
   right:0px;
-  overflow:auto;
 }
 #egyebInner {
   bottom:0;
   width:40px;
-  right:0px;
 }
 
 
@@ -173,11 +168,8 @@ pointer-events: none;
 
 
 #overlay #close{
-  position: -webkit-sticky;
-  position: sticky;
-  margin: 0px;
-  width: 30px;
-  left: 100%;
+  position: absolute;
+  right: 5px;
   top: 5px;
 }
 
@@ -189,12 +181,10 @@ pointer-events: none;
   width: 60%;
   display: block;
   height: auto;
-  max-height: 70%;
   background-color: white;
   border: black 3px solid;
   border-radius: 8px;
   overflow: auto;
-  padding: 5pt;
 }
 
 .delButt {
@@ -235,10 +225,6 @@ select{
 
 .phenotypes{
   margin-left: 10pt;
-}
-
-.attrName{
-	margin-top: 20pt;
 }
 
 
