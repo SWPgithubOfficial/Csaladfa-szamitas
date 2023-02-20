@@ -249,11 +249,15 @@ function calculateAttr(attrId){
                         }
                     }
                     let resStr = "";
+                    let usedRes = {};
                     for(let k=0; k<resPercent[idRef[nodeIds[i]]].length; k+=1){
-                        resStr += selectedAttrData[k][1];
-                        resStr += ": ";
-                        resStr += String(resPercent[idRef[nodeIds[i]]][k]);
-                        resStr += "%\n";
+                        if(not selectedAttrData[k][1] in usedRes){
+                            usedRes[selectedAttrData[k][1]] = 1;
+                            resStr += selectedAttrData[k][1];
+                            resStr += ": ";
+                            resStr += String(resPercent[idRef[nodeIds[i]]][k]);
+                            resStr += "%\n";
+                        }
                     }
                     let resultText = document.createElement("p");
                     resultText.className = "resultText";
