@@ -24,21 +24,46 @@ var attrCheckboxes = [];
 var attrInput = [];
 var attrData = {
     "t_0":{
-        "name":"tulajdonság 1",
+        "name":"AB0 vércsoport",
         "phenotypes":{
-            "AA":"nagyon beteg",
-            "AB":"kicsit beteg",
-            "BB":"nem beteg"
-        },
-        "rawGene":"AB"
+            "AA":"A",
+            "Ai":"A",
+            "BB":"B",
+            "Bi":"B",
+            "AB":"AB",
+            "ii":"0"},
+        "rawGene":"AiB"
     },
     "t_1":{
-        "name":"tulajdonság 2",
+        "name":"Rh vércsoport",
         "phenotypes":{
-            "AA":"nagyon beteg",
-            "AB":"kicsit beteg",
-            "BB":"nem beteg"
-            
+            "DD":"Rh+",
+            "Dd":"Rh+",
+            "dd":"Rh-"},
+        "rawGene":"Dd"
+    },
+    "t_2":{
+        "name":"Domináns öröklődés",
+        "phenotypes":{
+            "AA":"Aktív",
+            "Aa":"Aktív",
+            "aa":"Inaktív"},
+        "rawGene":"Aa"
+    },
+    "t_3":{
+        "name":"Recesszív öröklődés",
+        "phenotypes":{
+            "AA":"Inaktív",
+            "Aa":"Inaktív",
+            "aa":"Aktív"},
+        "rawGene":"Aa"
+    },
+    "t_4":{
+        "name":"Intermedier öröklődés",
+        "phenotypes":{
+            "AA":"A állapot",
+            "AB":"AB köztes állapot",
+            "BB":"B állapot"
         },
         "rawGene":"AB"
     }
