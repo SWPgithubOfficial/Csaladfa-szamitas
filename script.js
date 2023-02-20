@@ -247,6 +247,7 @@ function calculateAttr(attrId){
                             if(resNodes[k].className=="resultText"){
                                 resNodes[k].remove();
                             }
+                        }
                     if(nodeChildren[j].childNodes[1].value == "uk"){
                         let resStr = "";
                         let usedRes = {};
