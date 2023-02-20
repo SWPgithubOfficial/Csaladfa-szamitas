@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="scriptxd.js"></script>
+    <script src="globals.js"></script>
+    <script src="personNodes.js"></script>
+    <script src="attributes.js"></script>
+    <script src="saveLoad.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Családfa Genetika Szimuláció</title>
+</head>
+<body onload="ready()">
+
+    <canvas id="bg"></canvas>
+    <div id="tools">
+        <div class="toolName" id="eszkozok" onclick="changeVisibility('eszkozok')">E$zközök</div>
+        <div class="backg" id="eszkozokInner">
+            <div class="icons">
+                <img src="media/male.png" onclick="spawnNode(1)" class="icon" title="Férfi hozzáadása"><br>
+                <img src="media/female.png" onclick="spawnNode(0)" class="icon" title="Nő hozzáadása"><br>
+                <img src="media/unknown.png" onclick="spawnNode(2)" class="icon" title="Ismeretlen hozzáadása"><br><br>
+                <img id="movePic" src="media/moveSelected.png" onclick="selectMoveTool()" class="icon" title="Mozgatás"><br>
+                <img id="deletePic" src="media/delete2.png" onclick="selectDelTool()" class="icon" title="Törlés"><br>
+            </div>
+        </div>
+
+        <div class="toolName" id="tulajdonsagok" onclick="changeVisibility('tulajdonsagok')">Tulajdonságok</div>
+        <div class="backg" id="tulajdonsagokInner">
+            <div class="icons">
+                <form onchange="attributeFormChanged()" id="attrForm">
+                    <input type="checkbox" id="t_1" name="t_1">
+                    <label for="t_1"> tulajdonság 1</label><br>
+                    <input type="checkbox" id="t_2" name="t_2">
+                    <label for="t_2"> tulajdonság 2</label><br>
+                </form>
+                <p style="text-align: center;">
+                    <img class="icon" src="media/edit.png" onclick="openAttributes()" title="Tulajdonságok szerkesztése"><br>
+                    <img class="icon" src="media/calc.png" onclick="calculate()" title="Tulajdonságok kiszámítása">
+                </p>
+                
+            </div>
+        </div>
+
+        <div class="toolName" id="egyeb" onclick="changeVisibility('egyeb')">Egyéb</div>
+        <div class="backg" id="egyebInner">
+            <div class="icons">
+                <div class="image-upload">
+                    <label for="fInput">
+                      <img src="media/upload.png" class="icon" title="Fájl kiválasztása"/>
+                    </label>
+                    <input id="fInput" type="file" style="display: none;" accept=".txt" onchange="loadFile()"/>
+                </div>
+                <img class="icon" src="media/save.png" onclick="saveFile(setupSave(),'mentes')" title="Mentés"><br>
+                <img class="icon" src="media/help.png" onclick="" title="Súgó">
+                <img class="icon" src="media/info.png" onclick="" title="Rólunk">
+            </div>
+        </div>
+    </div>
+
+    <div id="overlay">
+        <h1>Tulajdonságok</h1>
+        <div id="content">
+            <div id="close" onclick="closeAttributes()"><img style="height: 30px; width: 30px;" class="icon" src="media/close.png" onclick="" title="Bezárás"></div>
+            <div id="attrList">
+                <div class="attr">
+                    <input type="text" placeholder="tulajdonság neve" value="tulajdonság" class="attrName">
+                    <button class="delButt">törlés</button>
+                    <div class="phenotypes">
+                        <input type="text" placeholder="fenotípus" value="beteg"><input type="text" placeholder="genotípus" value="Ab">
+                        <button>törlés</button>
+                    </div>
+                    <input type="text" placeholder="új fenotípus"><input type="text" placeholder="új genotípus">
+                    <button>+</button>
+                </div>
+            </div>
+            <br>
+            <input type="text" placeholder="új tulajdonság" id="newAttrName">
+            <button class="newPhenAdd" onclick="newAttrDiv()">+</button>
+        </div>
+    </div>
+
+</body>
+</html>

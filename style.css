@@ -1,0 +1,245 @@
+body {
+  font-family: "Calibri";
+  margin: 0;
+}
+
+
+#tools {
+  position: fixed;
+  left:100%;
+  z-index: 20;
+  margin-left: auto;
+  margin-right: 0px;
+  text-align: left;
+  user-select: none;
+  height: 100vh;
+}
+.toolName{
+  cursor: pointer;
+  font-size: 18pt;
+  font-weight: bold;
+  position: absolute;
+  transform-origin: 100%;
+  transform: rotate(-90deg);
+  right: 15px;
+  z-index: 14;
+}
+
+.backg {
+  display: none;
+  position: absolute;
+  height: 33.333%;
+  background-color: rgba(153, 119, 146, 0.05);
+}
+.backg img{
+  opacity: 70%;
+}
+.backg img:hover {
+  opacity: 100%;
+}
+
+.icons {
+  position: relative;
+  right:0px;
+  height: 100%;
+}
+.icon {
+  cursor: pointer;
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+#eszkozok {
+  top:8%;
+}
+#tulajdonsagok {
+  top:37%;
+}
+#egyeb {
+  top:77%;
+}
+#eszkozokInner {
+  top:0%;
+  width:40px;
+  right:0px;
+}
+#tulajdonsagokInner {
+  top:33.333%;
+  width:200px;
+  right:0px;
+  overflow:auto;
+}
+#egyebInner {
+  bottom:0;
+  width:40px;
+  right:0px;
+}
+
+
+.node {
+  position: absolute;
+  z-index: 9;
+  border: 1px solid black;
+  text-align: center;
+
+  background-color: white;
+
+  min-height: 60px;
+  width: 200px;
+
+  
+}
+
+.grabber {
+position: relative;
+cursor: move;
+background-color: rgb(78,78,78);
+z-index: 11;
+min-height: 30px;
+}
+
+
+.circle {
+position: relative;
+z-index: 12;
+border: 1px solid black;
+border-radius: 15px;
+background-color: pink;
+
+height: 30px;
+width: 30px;
+}
+
+.parent{
+position: relative;
+z-index: 12;
+border: 1px solid black;
+background-color: white;
+
+margin-top: -60px;
+margin-bottom: 45px;
+
+left:85px;
+
+height: 30px;
+width: 30px;
+}
+
+.loneParent{
+position: absolute;
+z-index: 12;
+border: 1px solid black;
+background-color: white;
+
+height: 30px;
+width: 30px;
+}
+
+
+#bg{
+border: 0px solid black;
+position: absolute;
+z-index: 10;
+pointer-events: none;
+}
+
+#overlay{
+  position: fixed;
+  
+  display: none;
+  
+
+  width: 100%;
+  height: 100%;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 50;
+}
+
+
+#overlay h1{
+  position: absolute;
+  text-align: center;
+  top:-15px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(0, 0, 0);
+}
+
+
+#overlay #close{
+  position: -webkit-sticky;
+  position: sticky;
+  margin: 0px;
+  width: 30px;
+  left: 100%;
+  top: 5px;
+}
+
+#overlay #content{
+  position: absolute;
+  left: 50%;
+  margin-top: 50px;
+  transform: translate(-50%);
+  width: 60%;
+  display: block;
+  height: auto;
+  max-height: 70%;
+  background-color: white;
+  border: black 3px solid;
+  border-radius: 8px;
+  overflow: auto;
+  padding: 5pt;
+}
+
+.delButt {
+  background-color: white;
+  border: 0px;
+  color:red;
+  font-weight: 600;
+}
+.delButt:hover {
+  background-color: rgb(250, 0, 0);
+  border-radius: 5px;
+  color:white;
+}
+.newPhenAdd{
+  text-align: center;
+  vertical-align: middle;
+  border: 0px;
+  background-color: rgba(0, 210, 14, 0.75);
+  color:rgb(0, 0, 0);
+  font-weight: 500;
+  border-radius: 5px;
+}
+.newPhenAdd:hover{
+  border: rgb(0, 210, 14) 1px solid;
+  background-color: rgb(0, 210, 14);
+  border-radius: 5px;
+}
+
+.resultText{
+  text-align: center;
+  font-style: italic;
+}
+
+select{
+  width: 90%;
+}
+
+
+.phenotypes{
+  margin-left: 10pt;
+}
+
+.attrName{
+	margin-top: 20pt;
+}
+
+
+
