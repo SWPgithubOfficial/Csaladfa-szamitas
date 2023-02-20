@@ -68,7 +68,7 @@ function loadFromText(text){
     let cList = jsonData["connections"];
 
     for(let i=0; i<cList.length; i+=1){
-        usedCIds.push(cList[2]);
+        usedCIds.push(cList[i][2]);
     }
 
     connections = cList;
