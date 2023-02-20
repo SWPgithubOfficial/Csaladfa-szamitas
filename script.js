@@ -251,7 +251,7 @@ function calculateAttr(attrId){
                     let resStr = "";
                     let usedRes = {};
                     for(let k=0; k<resPercent[idRef[nodeIds[i]]].length; k+=1){
-                        if(not selectedAttrData[k][1] in usedRes){
+                        if(!(selectedAttrData[k][1] in usedRes)){
                             usedRes[selectedAttrData[k][1]] = 1;
                             resStr += selectedAttrData[k][1];
                             resStr += ": ";
