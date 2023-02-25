@@ -1,13 +1,13 @@
 function selectDelTool(){
     selectedTool = 1;
-    document.getElementById("deletePic").setAttribute("src","media/deleteSelected2.png");
-    document.getElementById("movePic").setAttribute("src","media/move.png");
+    document.getElementById("deletePic").setAttribute("src","deleteSelected2.png");
+    document.getElementById("movePic").setAttribute("src","move.png");
 }
 
 function selectMoveTool(){
     selectedTool = 0;
-    document.getElementById("deletePic").setAttribute("src","media/delete2.png");
-    document.getElementById("movePic").setAttribute("src","media/moveSelected.png");
+    document.getElementById("deletePic").setAttribute("src","delete2.png");
+    document.getElementById("movePic").setAttribute("src","moveSelected.png");
 }
 
 function changeVisibility(id){
