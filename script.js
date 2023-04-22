@@ -10,6 +10,12 @@ function selectMoveTool(){
     document.getElementById("movePic").setAttribute("src","moveSelected.png");
 }
 
+
+function test(){
+    console.log("xd");
+}
+
+
 function changeVisibility(id){
     let inner = document.getElementById(id+"Inner");
     let header = document.getElementById(id);
@@ -47,6 +53,17 @@ function ready(){
     attrList = document.getElementById("attrList");
 
     toolDiv = document.getElementById("tools");
+
+    attrTypeSelect = document.getElementById("attrTypePicker");
+
+    let baseAttrTypes = Object.keys(baseAttr);
+    for(let i=0; i<baseAttrTypes.length; i+=1){
+        let attrOption = document.createElement("option");
+        attrOption.value = baseAttrTypes[i];
+        attrOption.innerText = baseAttr[baseAttrTypes[i]]["name"];
+        attrTypeSelect.appendChild(attrOption);
+    }
+
 
     updateAttrForm();
     attributeFormChanged();

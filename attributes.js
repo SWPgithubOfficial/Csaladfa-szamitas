@@ -87,6 +87,7 @@ function AttrDiv(name="",attrD=[]){
         aDiv.appendChild(phenR);
     }
 
+    /*
     let newPhenInp = document.createElement("input");
     newPhenInp.type = "text";
     newPhenInp.placeholder = "új fenotípus";
@@ -96,16 +97,18 @@ function AttrDiv(name="",attrD=[]){
     newGenInp.type = "text";
     newGenInp.placeholder = "genotípus";
     newGenInp.className = "newGenInp";
+    */
 
     let newPhenAdd = document.createElement("button");
     newPhenAdd.innerText = "+";
     newPhenAdd.addEventListener("click",newPhenRow);
     newPhenAdd.className = "newPhenAdd";
     
+
     let newLine = document.createElement("br");
 
-    aDiv.appendChild(newPhenInp);
-    aDiv.appendChild(newGenInp);
+    //aDiv.appendChild(newPhenInp);
+    //aDiv.appendChild(newGenInp);
     aDiv.appendChild(newPhenAdd);
     aDiv.appendChild(newLine);
 
@@ -226,23 +229,25 @@ function updateAttrOverlay(){
 
 
 function newAttrDiv(){
-    let nInput = document.getElementById("newAttrName");
-    let aName = "";
-    if(nInput.value == ""){
-        aName = "tulajdonság";
-    }else{
-        aName = nInput.value;
+
+    let baseAttrName = baseAttr[attrTypeSelect.value]["name"];
+    let baseAttrGenPhen = [];
+    let baseAttrGen = Object.keys(baseAttr[attrTypeSelect.value]["phenotypes"]);
+    for(let i=0; i<baseAttrGen.length; i+=1){
+        baseAttrGenPhen.push([baseAttrGen[i],baseAttr[attrTypeSelect.value]["phenotypes"][baseAttrGen[i]]]);
     }
-    let aDiv = AttrDiv(aName,[["AA","fenotípus"]]);
+
+    let aDiv = AttrDiv(baseAttrName,baseAttrGenPhen);
     attrList.appendChild(aDiv);
 }
 
 function newPhenRow(event){
     let aDiv = event.target.parentElement;
-    let newPhenInp = null;
+    //let newPhenInp = null;
     let phen = "fenotípus";
     let gen = "AA";
     //console.log(aDiv.childNodes);
+    /*
     for(let i=0; i<aDiv.childNodes.length; i+=1){
         if(aDiv.childNodes[i].className == "newPhenInp"){
             newPhenInp = aDiv.childNodes[i];
@@ -256,9 +261,10 @@ function newPhenRow(event){
             }
         }
     }
+    */
     let phenR = PhenRow(phen,gen);
     //console.log(newPhenInp);
-    aDiv.insertBefore(phenR,newPhenInp);
+    aDiv.insertBefore(phenR,event.target);
 }
 
 function removeAttrElement(event){

@@ -7,6 +7,8 @@ var attrList = null;
 
 var toolDiv = null;
 
+var attrTypeSelect = null;
+
 var usedNames = [];
 var usedIds = [];
 var nodes = [];
@@ -22,6 +24,34 @@ var tools = ["Move","Delete"];
 
 var attrCheckboxes = [];
 var attrInput = [];
+var baseAttr = {
+    "empty":{
+        "name":"Üres tulajdonság",
+        "phenotypes":{
+            "AA":"fenotípus"}
+    },
+    "dominans":{
+        "name":"Domináns öröklődés",
+        "phenotypes":{
+            "AA":"Aktív",
+            "Aa":"Aktív",
+            "aa":"Inaktív"}
+    },
+    "recessziv":{
+        "name":"Recesszív öröklődés",
+        "phenotypes":{
+            "AA":"Inaktív",
+            "Aa":"Inaktív",
+            "aa":"Aktív"}
+    },
+    "intermedier":{
+        "name":"Intermedier öröklődés",
+        "phenotypes":{
+            "AA":"A állapot",
+            "AB":"AB köztes állapot",
+            "BB":"B állapot"}
+    }
+};
 var attrData = {
     "t_0":{
         "name":"AB0 vércsoport",
@@ -41,31 +71,6 @@ var attrData = {
             "Dd":"Rh+",
             "dd":"Rh-"},
         "rawGene":"Dd"
-    },
-    "t_2":{
-        "name":"Domináns öröklődés",
-        "phenotypes":{
-            "AA":"Aktív",
-            "Aa":"Aktív",
-            "aa":"Inaktív"},
-        "rawGene":"Aa"
-    },
-    "t_3":{
-        "name":"Recesszív öröklődés",
-        "phenotypes":{
-            "AA":"Inaktív",
-            "Aa":"Inaktív",
-            "aa":"Aktív"},
-        "rawGene":"Aa"
-    },
-    "t_4":{
-        "name":"Intermedier öröklődés",
-        "phenotypes":{
-            "AA":"A állapot",
-            "AB":"AB köztes állapot",
-            "BB":"B állapot"
-        },
-        "rawGene":"AB"
     }
 };
 
