@@ -252,6 +252,8 @@ function calculateAttr(attrId){
         resPercent.push(resP);
     }
 
+    //console.log(resPercent);
+
     nodeIds = Object.keys(idRef);
     for(let i=0; i<nodeIds.length; i+=1){
         //console.log(idRef[nodeIds[i]]);
@@ -270,6 +272,10 @@ function calculateAttr(attrId){
                         let usedRes = {};
                         for(let k=0; k<resPercent[idRef[nodeIds[i]]].length; k+=1){
                             if(!(selectedAttrData[k][1] in usedRes)){
+                                if(isNaN(resPercent[idRef[nodeIds[i]]][k])){
+                                    resStr = "Hibás beállítás!\n"
+                                    break;
+                                }
                                 usedRes[selectedAttrData[k][1]] = 1;
                                 resStr += selectedAttrData[k][1];
                                 resStr += ": ";
